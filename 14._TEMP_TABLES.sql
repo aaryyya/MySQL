@@ -1,0 +1,2 @@
+#temp  tabels are the tables that are created and are visible only in the sessions they are created in
+#usually used for storiing intermediate results for complex queries before inserting them into something final

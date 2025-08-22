@@ -23,4 +23,7 @@ union
 select first_name, last_name, 'Well Paid' as Label
 from employee_salary
 where salary>70000 
+order by first_name,last_name
+
+
 #limit 1, 3 

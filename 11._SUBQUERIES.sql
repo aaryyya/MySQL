@@ -9,6 +9,10 @@ where employee_id in
 #ron swanson which is empid=2 doesnt exist in salary that is why it isnt in this output
 #IN is an operator and the subquery is operand
 
+#select  avg(salary)
+#from employee_salary
+#group by first_name; this query doesnt work 
+
 select first_name, salary,
 (select avg(salary)
 from employee_salary)
@@ -35,4 +39,14 @@ from employee_demographics
 group by gender)as agg_table
 ;
 
+
+select avg(max_age)
+from (
+select gender, 
+avg(age) as avg_age,
+max(age) as max_age ,
+min(age) as min_age,
+count(age) as count_a  #this seems like a temp table
+from employee_demographics
+)
 

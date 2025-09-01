@@ -23,3 +23,14 @@ begin
 end $$
 delimiter ;
 
+delimiter $$
+create procedure large_sal3(p_em_id int)
+begin 
+	select salary
+	from employee_salary
+    where employee_id=p_em_id;#parameter is the em_id and we see if the actual emmployee_id is same as that of the paraameter passed
+	
+end $$
+delimiter ;
+
+call large_sal3(1);

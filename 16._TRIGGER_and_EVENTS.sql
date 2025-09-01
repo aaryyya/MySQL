@@ -13,4 +13,22 @@ end $$
 delimiter ;
 
 insert into employee_salary(employee_id,first_name,last_name,occupation,salary,dept_id)
-values(16,'Jean','Sebastian','Clerk',400000,null)
+values(16,'Jean','Sebastian','Clerk',400000,null);
+
+
+
+select*
+from employee_demographics;
+
+delimiter $$
+create event delete_retires
+on schedule every 30 second
+do
+begin
+	delete
+    from employee_demographics
+    where age>=60;
+end $$
+delimiter ;
+
+show variables like 'event%';
